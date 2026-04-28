@@ -27,13 +27,13 @@ export default function Navbar() {
   onClick={closeMenu}
   className="group flex items-center"
 >
-  <div className="relative h-14 w-45 sm:h-16 sm:w-55">
+  <div className="relative h-14 w-45 sm:h-16 sm:w-55 lg:w-60">
     <Image
       src="/logo.png"
       alt="Royal Dining Logo"
       fill
       priority
-      sizes="(max-width: 640px) 180px, 220px"
+      sizes="(max-width: 640px) 180px, (max-width: 1024px) 220px, 240px"
       className="object-contain object-left"
     />
   </div>
