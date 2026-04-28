@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -19,21 +20,24 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-primary-bg/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Logo */}
-        <Link href="/" onClick={closeMenu} className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-accent-gold/30 bg-card shadow-lg transition-all duration-300 group-hover:scale-105 sm:h-11 sm:w-11">
-            <span className="text-lg font-bold text-accent-gold">R</span>
-          </div>
-
-          <div className="flex flex-col">
-            <h1 className="text-sm font-bold uppercase tracking-[0.14em] text-heading sm:text-lg sm:tracking-[0.18em]">
-              Royal Dining
-            </h1>
-            <p className="text-[9px] uppercase tracking-[0.16em] text-body sm:text-[11px] sm:tracking-[0.25em]">
-              Fine Dining Experience
-            </p>
-          </div>
-        </Link>
+        
+{/* Logo */}
+<Link
+  href="#home"
+  onClick={closeMenu}
+  className="group flex items-center"
+>
+  <div className="relative h-14 w-45 sm:h-16 sm:w-55">
+    <Image
+      src="/logo.png"
+      alt="Royal Dining Logo"
+      fill
+      priority
+      sizes="(max-width: 640px) 180px, 220px"
+      className="object-contain object-left"
+    />
+  </div>
+</Link>
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-8 lg:flex">
@@ -56,7 +60,7 @@ export default function Navbar() {
           Book Table
         </Link>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}

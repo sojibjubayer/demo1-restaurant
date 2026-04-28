@@ -17,8 +17,10 @@ export const metadata: Metadata = {
     default: "Restaurant Website Design Qatar | Premium Restaurant Demo",
     template: "%s | Restaurant Website Qatar",
   },
+
   description:
     "Premium restaurant website demo for Qatar and Doha restaurants with online menu, table reservation, mobile-first design, luxury branding, and SEO-friendly structure.",
+
   keywords: [
     "restaurant website design Qatar",
     "restaurant website design Doha",
@@ -29,15 +31,27 @@ export const metadata: Metadata = {
     "fine dining restaurant website Doha",
     "restaurant web development Qatar",
     "restaurant SEO Qatar",
-    "restaurant website demo",
+    "restaurant demo website",
   ],
+
   authors: [{ name: "Samira Cloud" }],
   creator: "Samira Cloud",
   publisher: "Samira Cloud",
+
   metadataBase: new URL("https://restaurant.samiracloud.com"),
+
   alternates: {
     canonical: "/",
   },
+
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
+
+  manifest: "/site.webmanifest",
+
   openGraph: {
     title: "Restaurant Website Design Qatar | Premium Restaurant Demo",
     description:
@@ -47,12 +61,14 @@ export const metadata: Metadata = {
     locale: "en_QA",
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Restaurant Website Design Qatar | Premium Restaurant Demo",
     description:
       "Premium restaurant website demo with online menu, booking CTA, mobile-first UI, and SEO structure for Qatar restaurants.",
   },
+
   robots: {
     index: true,
     follow: true,
