@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Award, ChefHat, Wine } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
@@ -24,20 +25,18 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section
-      id="about"
-      className="bg-primary-bg py-24"
-    >
+    <section id="about" className="bg-primary-bg py-24">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-        
         {/* Left Image */}
         <div className="relative">
           <div className="overflow-hidden rounded-4xl border border-accent-gold/20 bg-card shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1552566626-52f8b828add9"
-              alt="Luxury Restaurant Interior"
-              className="h-162.5 w-full object-cover"
-            />
+            <Image
+  src="/menus/luxury-restaurant-interior.webp"
+  alt="Luxury restaurant interior"
+  width={1200}
+  height={800}
+  className="h-full w-full object-cover"
+/>
           </div>
 
           {/* Floating Experience Card */}
@@ -45,9 +44,7 @@ export default function AboutSection() {
             <p className="text-xs uppercase tracking-[0.2em] text-muted">
               Since
             </p>
-            <h3 className="mt-2 text-3xl font-bold text-accent-gold">
-              2012
-            </h3>
+            <h3 className="mt-2 text-3xl font-bold text-accent-gold">2012</h3>
             <p className="mt-1 text-sm text-body">
               Serving luxury dining experiences
             </p>

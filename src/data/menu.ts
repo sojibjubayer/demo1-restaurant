@@ -6,8 +6,7 @@ export const menuItems = [
     price: "QAR 180",
     description:
       "Premium wagyu beef grilled to perfection with chef special sauce.",
-    image:
-      "https://images.unsplash.com/photo-1544025162-d76694265947",
+    image: "/menus/wagyu-steak.webp",
   },
   {
     id: 2,
@@ -16,8 +15,7 @@ export const menuItems = [
     price: "QAR 145",
     description:
       "Fresh Atlantic salmon served with seasonal vegetables and lemon butter.",
-    image:
-      "https://images.unsplash.com/photo-1467003909585-2f8a72700288",
+    image: "/menus/grilled-salmon.webp",
   },
   {
     id: 3,
@@ -26,8 +24,7 @@ export const menuItems = [
     price: "QAR 120",
     description:
       "Creamy handmade pasta finished with black truffle and parmesan.",
-    image:
-      "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9",
+    image: "/menus/truffle-pasta.webp",
   },
   {
     id: 4,
@@ -36,8 +33,7 @@ export const menuItems = [
     price: "QAR 160",
     description:
       "A premium selection of grilled kebabs, lamb chops, and chicken.",
-    image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1",
+    image: "/menus/arabic-mixed-grill.webp",
   },
   {
     id: 5,
@@ -46,8 +42,7 @@ export const menuItems = [
     price: "QAR 95",
     description:
       "Rich and creamy lobster bisque prepared with fine herbs and spices.",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554",
+    image: "/menus/lobster-bisque.webp",
   },
   {
     id: 6,
@@ -56,7 +51,6 @@ export const menuItems = [
     price: "QAR 110",
     description:
       "Italian arborio rice with saffron essence and parmesan richness.",
-    image:
-      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601",
+    image: "/menus/saffron-risotto.webp",
   },
 ];

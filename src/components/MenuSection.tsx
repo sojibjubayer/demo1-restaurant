@@ -1,21 +1,19 @@
-"use client"
+"use client";
+
+import Image from "next/image";
 import { menuItems } from "@/data/menu";
 
 const phoneNumber = "97471294020";
 
-const createWhatsAppLink = (itemName: string) => {
-  const message = `Hello, I want to order: ${itemName}`;
+const createWhatsAppLink = (itemName: string, itemPrice: string) => {
+  const message = `Hello, I want to order: ${itemName} (${itemPrice})`;
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 };
 
 export default function MenuSection() {
   return (
-    <section
-      id="menu"
-      className="bg-secondary-bg py-24"
-    >
+    <section id="menu" className="bg-secondary-bg py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
         {/* Heading */}
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-accent-gold">
@@ -35,16 +33,18 @@ export default function MenuSection() {
         {/* Menu Grid */}
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {menuItems.map((item) => (
-            <div
+            <article
               key={item.id}
               className="group overflow-hidden rounded-[28px] border border-accent-gold/10 bg-card transition-all duration-300 hover:-translate-y-2 hover:border-accent-gold/30"
             >
               {/* Image */}
-              <div className="overflow-hidden">
-                <img
+              <div className="relative h-64 w-full overflow-hidden">
+                <Image
                   src={item.image}
                   alt={item.name}
-                  className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
@@ -62,25 +62,22 @@ export default function MenuSection() {
                   {item.description}
                 </p>
 
-                <div className="mt-6 flex items-center justify-between">
+                <div className="mt-6 flex items-center justify-between gap-4">
                   <span className="text-lg font-semibold text-heading">
                     {item.price}
                   </span>
 
-                  <button
-                    onClick={() =>
-                      window.open(
-                        createWhatsAppLink(item.name),
-                        "_blank"
-                      )
-                    }
-                    className="rounded-full border border-green-500/30 bg-green-500 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-green-600"
+                  <a
+                    href={createWhatsAppLink(item.name, item.price)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 rounded-full border border-green-500/30 bg-green-500 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-green-600"
                   >
                     Order Now
-                  </button>
+                  </a>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

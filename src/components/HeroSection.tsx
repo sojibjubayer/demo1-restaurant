@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -11,7 +12,6 @@ export default function HeroSection() {
       </div>
 
       <div className="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
-        
         {/* Left Content */}
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-accent-gold/20 bg-card px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent-gold">
@@ -21,9 +21,7 @@ export default function HeroSection() {
 
           <h1 className="mt-6 text-4xl font-black leading-tight text-heading sm:text-5xl lg:text-7xl">
             Taste Luxury
-            <span className="mt-2 block text-accent-gold">
-              in Every Bite
-            </span>
+            <span className="mt-2 block text-accent-gold">in Every Bite</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-8 text-body sm:text-lg">
@@ -69,11 +67,14 @@ export default function HeroSection() {
 
         {/* Right Image */}
         <div className="relative">
-          <div className="relative overflow-hidden rounded-4xl border border-accent-gold/20 bg-card shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0"
+          <div className="relative h-130 overflow-hidden rounded-4xl border border-accent-gold/20 bg-card shadow-2xl">
+            <Image
+              src="/menus/hero-image.webp"
               alt="Luxury Restaurant Dining"
-              className="h-162.5px w-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
             />
           </div>
 
