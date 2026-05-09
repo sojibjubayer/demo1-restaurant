@@ -1,4 +1,12 @@
+"use client"
 import { menuItems } from "@/data/menu";
+
+const phoneNumber = "97471294020";
+
+const createWhatsAppLink = (itemName: string) => {
+  const message = `Hello, I want to order: ${itemName}`;
+  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+};
 
 export default function MenuSection() {
   return (
@@ -59,8 +67,16 @@ export default function MenuSection() {
                     {item.price}
                   </span>
 
-                  <button className="rounded-full border border-accent-gold/20 px-4 py-2 text-sm font-medium text-accent-gold transition-all duration-300 hover:bg-accent-gold hover:text-dark-text">
-                    Order
+                  <button
+                    onClick={() =>
+                      window.open(
+                        createWhatsAppLink(item.name),
+                        "_blank"
+                      )
+                    }
+                    className="rounded-full border border-green-500/30 bg-green-500 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-green-600"
+                  >
+                    Order Now
                   </button>
                 </div>
               </div>

@@ -1,6 +1,46 @@
+"use client";
+
+import { useState } from "react";
 import { Clock3, MapPin, Phone } from "lucide-react";
 
+const phoneNumber = "97471294020";
+
 export default function ReservationSection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    date: "",
+    guests: "2 Guests",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleReservation = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const message = `
+🍽️ New Table Reservation
+
+👤 Name: ${formData.name}
+📞 Phone: ${formData.phone}
+📅 Date: ${formData.date}
+👥 Guests: ${formData.guests}
+    `;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
   return (
     <section
       id="reservation"
@@ -89,16 +129,24 @@ export default function ReservationSection() {
 
           {/* Right Form */}
           <div className="rounded-4xl border border-accent-gold/10 bg-card p-8">
-            <form className="space-y-5">
+            <form
+              onSubmit={handleReservation}
+              className="space-y-5"
+            >
               
               <div>
                 <label className="mb-2 block text-sm font-medium text-heading">
                   Full Name
                 </label>
+
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Enter your name"
                   className="w-full rounded-2xl border border-accent-gold/10 bg-secondary-bg px-5 py-4 text-heading outline-none placeholder:text-muted focus:border-accent-gold"
+                  required
                 />
               </div>
 
@@ -106,21 +154,32 @@ export default function ReservationSection() {
                 <label className="mb-2 block text-sm font-medium text-heading">
                   Phone Number
                 </label>
+
                 <input
                   type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
                   placeholder="Enter your phone"
                   className="w-full rounded-2xl border border-accent-gold/10 bg-secondary-bg px-5 py-4 text-heading outline-none placeholder:text-muted focus:border-accent-gold"
+                  required
                 />
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
+                
                 <div>
                   <label className="mb-2 block text-sm font-medium text-heading">
                     Date
                   </label>
+
                   <input
                     type="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
                     className="w-full rounded-2xl border border-accent-gold/10 bg-secondary-bg px-5 py-4 text-heading outline-none focus:border-accent-gold"
+                    required
                   />
                 </div>
 
@@ -128,7 +187,11 @@ export default function ReservationSection() {
                   <label className="mb-2 block text-sm font-medium text-heading">
                     Guests
                   </label>
+
                   <select
+                    name="guests"
+                    value={formData.guests}
+                    onChange={handleChange}
                     className="w-full rounded-2xl border border-accent-gold/10 bg-secondary-bg px-5 py-4 text-heading outline-none focus:border-accent-gold"
                   >
                     <option>2 Guests</option>
