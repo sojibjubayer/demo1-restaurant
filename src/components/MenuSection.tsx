@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { menuItems } from "@/data/menu";
 
 const phoneNumber = "97471294020";
@@ -79,6 +81,20 @@ export default function MenuSection() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="mt-14 flex justify-center">
+          <Link
+            href="/menu"
+            className="group inline-flex items-center gap-3 rounded-full border border-accent-gold/20 bg-card px-7 py-3 text-sm font-semibold text-heading transition-all duration-300 hover:-translate-y-1 hover:border-accent-gold hover:bg-accent-gold hover:text-black"
+          >
+            View Full Menu
+            <ArrowRight
+              size={18}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Link>
         </div>
       </div>
     </section>
