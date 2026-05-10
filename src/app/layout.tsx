@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
+
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -60,6 +65,14 @@ export const metadata: Metadata = {
     siteName: "Restaurant Website Qatar",
     locale: "en_QA",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Premium restaurant website design Qatar",
+      },
+    ],
   },
 
   twitter: {
@@ -67,6 +80,7 @@ export const metadata: Metadata = {
     title: "Restaurant Website Design Qatar | Premium Restaurant Demo",
     description:
       "Premium restaurant website demo with online menu, booking CTA, mobile-first UI, and SEO structure for Qatar restaurants.",
+    images: ["/og-image.jpg"],
   },
 
   robots: {
@@ -78,15 +92,17 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-screen bg-primary-bg text-heading">
+      <body className="min-h-screen overflow-x-hidden bg-primary-bg text-heading">
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

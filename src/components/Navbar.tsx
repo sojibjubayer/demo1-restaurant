@@ -6,10 +6,10 @@ import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Menu", href: "#menu" },
-  { label: "About", href: "#about" },
-  { label: "Reservation", href: "#reservation" },
+  { label: "Home", href: "/#home" },
+  { label: "Menu", href: "/#menu" },
+  { label: "About", href: "/#about" },
+  { label: "Reservation", href: "/#reservation" },
 ];
 
 export default function Navbar() {
@@ -20,10 +20,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-primary-bg/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 sm:px-6 lg:px-8">
-        
         {/* LOGO */}
         <Link
-          href="#home"
+          href="/#home"
           onClick={closeMenu}
           className="group flex shrink-0 items-center"
         >
@@ -54,7 +53,7 @@ export default function Navbar() {
 
         {/* DESKTOP CTA */}
         <Link
-          href="#reservation"
+          href="/#reservation"
           className="hidden rounded-full border border-accent-gold bg-accent-gold px-5 py-2 text-sm font-semibold text-dark-text transition-all duration-300 hover:scale-105 hover:bg-accent-bronze md:inline-flex"
         >
           Book Table
@@ -87,7 +86,7 @@ export default function Navbar() {
             ))}
 
             <Link
-              href="#reservation"
+              href="/#reservation"
               onClick={closeMenu}
               className="mt-2 rounded-full bg-accent-gold px-5 py-2.5 text-center text-sm font-semibold text-dark-text transition-all duration-300 hover:bg-accent-bronze"
             >

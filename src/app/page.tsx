@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-primary-bg">
-      <Navbar />
+    
 
       <HeroSection />
 
@@ -18,7 +18,7 @@ export default function HomePage() {
 
       <ReservationSection />
 
-      <Footer />
+     
     </main>
   );
 }
